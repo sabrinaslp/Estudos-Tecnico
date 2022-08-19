@@ -15,6 +15,34 @@ descricao VARCHAR(100),
 PRIMARY KEY (idNivel)
 );
 
+CREATE TABLE Mentor (
+idMentor INT NOT NULL AUTO_INCREMENT,
+tecnologia_id INT NOT NULL,
+nome VARCHAR(250),
+data_nasc DATE,
+cpf VARCHAR(11) NOT NULL,
+rg VARCHAR (9) NOT NULL,
+email VARCHAR(200),
+endereco VARCHAR(250),
+graduacao VARCHAR(200),
+anos_exp INT, 
+fluente_ingles CHAR(1),
+PRIMARY KEY (idMentor),
+FOREIGN KEY (tecnologia_id) REFERENCES Tecnologia (idTecnologia)
+);
+
+CREATE TABLE Projeto (
+idProjeto INT NOT NULL AUTO_INCREMENT,
+tecnologia_id INT NOT NULL,
+nivel_id INT NOT NULL,
+mentor_id INT NOT NULL,
+descricao VARCHAR(100),
+PRIMARY KEY (idProjeto),
+FOREIGN KEY (tecnologia_id) REFERENCES Tecnologia (idTecnologia),
+FOREIGN KEY (nivel_id) REFERENCES Nivel (idNivel),
+FOREIGN KEY (mentor_id) REFERENCES Mentor (idMentor)
+);
+
 CREATE TABLE Aprendiz (
 idAprendiz INT NOT NULL AUTO_INCREMENT,
 tecnologia_id INT NOT NULL,
@@ -54,18 +82,6 @@ FOREIGN KEY (ajudante_id) REFERENCES Ajudante (idAjudante),
 FOREIGN KEY (nivel_id) REFERENCES Nivel (idNivel)
 );
 
-CREATE TABLE Projeto (
-idProjeto INT NOT NULL AUTO_INCREMENT,
-tecnologia_id INT NOT NULL,
-nivel_id INT NOT NULL,
-mentor_id INT NOT NULL,
-descricao VARCHAR(100),
-PRIMARY KEY (idProjeto),
-FOREIGN KEY (tecnologia_id) REFERENCES Tecnologia (idTecnologia),
-FOREIGN KEY (nivel_id) REFERENCES Nivel (idNivel),
-FOREIGN KEY (mentor_id) REFERENCES Mentor (idMentor)
-);
-
 CREATE TABLE Material (
 idMaterial INT NOT NULL AUTO_INCREMENT,
 projeto_id INT NOT NULL,
@@ -82,18 +98,4 @@ PRIMARY KEY (idForum),
 FOREIGN KEY (projeto_id) REFERENCES Projeto (idProjeto)
 );
 
-CREATE TABLE Mentor (
-idMentor INT NOT NULL AUTO_INCREMENT,
-tecnologia_id INT NOT NULL,
-nome VARCHAR(250),
-data_nasc DATE,
-cpf VARCHAR(11) NOT NULL,
-rg VARCHAR (9) NOT NULL,
-email VARCHAR(200),
-endereco VARCHAR(250),
-graduacao VARCHAR(200),
-anos_exp INT, 
-fluente_ingles CHAR(1),
-PRIMARY KEY (idMentor),
-FOREIGN KEY (tecnologia_id) REFERENCES Tecnologia (idTecnologia)
-);
+
