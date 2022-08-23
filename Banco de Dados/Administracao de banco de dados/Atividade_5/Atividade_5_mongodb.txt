@@ -1,0 +1,152 @@
+1) Criação de um novo banco NoSQL 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+use atividade5
+
+'switched to db atividade5'
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2) Inclusão dos dados presentes na tabela “funcionario” do banco de dados SQL usado nas atividades (Observe os relacionamentos dessa tabela com “cargo” e “usuario”.)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.cargo.insertOne({id: 1, cargo: "Gerente", salario: 5000})
+{ acknowledged: true,
+  insertedId: ObjectId("630418f06d5d4b4c86981ee2") 
+
+db.cargo.insertOne({id: 2, cargo: "Vendedor", salario: 2500, comissao: 10})
+{ acknowledged: true,
+  insertedId: ObjectId("630419396d5d4b4c86981ee3") }
+
+db.cargo.insertOne({id: 3, cargo: "Servicos gerais", salario: 1500})
+{ acknowledged: true,
+  insertedId: ObjectId("630419726d5d4b4c86981ee4") 
+
+db.cargo.insertOne({id: 4, cargo: "Supervisor de Vendas", salario: 2800, comissao: 10})
+{ acknowledged: true,
+  insertedId: ObjectId("6304198a6d5d4b4c86981ee5") }
+
+db.cargo.insertOne({id: 5, cargo: "Estoquistas", salario: 2000})
+{ acknowledged: true,
+  insertedId: ObjectId("630419a86d5d4b4c86981ee6") }
+
+
+db.usuario.insertOne({id: 1, login: "admin", senha: "12345", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041a586d5d4b4c86981ee7") }
+
+db.usuario.insertOne({id: 2, login: "gerencia", senha: "67890", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041ad66d5d4b4c86981ee8") }
+
+db.usuario.insertOne({id: 3, login: "dev", senha: "1q2w3e", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041af16d5d4b4c86981ee9") }
+
+db.usuario.insertOne({id: 4, login: "silvioc", senha: "sil123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041b756d5d4b4c86981eea") }
+
+db.usuario.insertOne({id: 5, login: "amarov", senha: "ama123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041b8c6d5d4b4c86981eeb") }
+
+db.usuario.insertOne({id: 6, login: "marcosv", senha: "mar123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041ba06d5d4b4c86981eec") }
+
+db.usuario.insertOne({id: 7, login: "domingass", senha: "dom123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041bb56d5d4b4c86981eed") }
+
+db.usuario.insertOne({id: 8, login: "marinaf", senha: "mar123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041bcc6d5d4b4c86981eee") }
+
+db.usuario.insertOne({id: 9, login: "joanaf", senha: "joa123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041bf46d5d4b4c86981eef") }
+
+db.usuario.insertOne({id: 10, login: "apariciod", senha: "apa123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041c126d5d4b4c86981ef0") }
+
+db.usuario.insertOne({id: 11, login: "filomenal", senha: "fil123", ultimo_login:"2022-01-10 10:00:00"})
+{ acknowledged: true,
+  insertedId: ObjectId("63041c4f6d5d4b4c86981ef1") }
+
+
+
+db.funcionario.insertOne({nome: "Sílvio Cortês", telefone: "99 7898-1234", cpf: "84537768061", id:1, cargo_id: 2, usuario_id: 4})
+{ acknowledged: true,
+  insertedId: ObjectId("63041c836d5d4b4c86981ef2") }
+
+db.funcionario.insertOne({nome: "Amaro Valadão", telefone: "99 7534-1234", cpf: "03074142057", id:2, cargo_id: 2, usuario_id: 5})
+{ acknowledged: true,
+  insertedId: ObjectId("63041c9c6d5d4b4c86981ef3") }
+
+db.funcionario.insertOne({nome: "Marcos Valadão", telefone: "99 7534-7897", cpf: "40967947081", id:3, cargo_id: 2, usuario_id: 6})
+{ acknowledged: true,
+  insertedId: ObjectId("63041cba6d5d4b4c86981ef4") }
+
+db.funcionario.insertOne({nome: "Domingas Souza Sá", telefone: "99 7534-1234", cpf: "51077408048", id:4, cargo_id: 4, usuario_id: 7})
+{ acknowledged: true,
+  insertedId: ObjectId("63041cd36d5d4b4c86981ef5") }
+
+db.funcionario.insertOne({nome: "Marina Frazão", telefone: "99 7589-1854", cpf: "21788502000", id:5, cargo_id: 1, usuario_id: 8})
+{ acknowledged: true,
+  insertedId: ObjectId("63041ce76d5d4b4c86981ef6") }
+
+db.funcionario.insertOne({nome: "Joana Freitas", telefone: "99 7589-7534", cpf: "85690938025", id:6, cargo_id: 3, usuario_id: 9})
+{ acknowledged: true,
+  insertedId: ObjectId("63041d046d5d4b4c86981ef7") }
+
+db.funcionario.insertOne({nome: "Aparício Dias", telefone: "99 7514-7884", cpf: "14131448025", id:7, cargo_id: 3, usuario_id: 10})
+{ acknowledged: true,
+  insertedId: ObjectId("63041d116d5d4b4c86981ef8") }
+
+db.funcionario.insertOne({nome: "Filomena da Luz", telefone: "99 7584-7884", cpf: "19641782070", id:8, cargo_id: 5, usuario_id: 11})
+{ acknowledged: true,
+  insertedId: ObjectId("63041d236d5d4b4c86981ef9") }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Atualização de dados de “funcionario” (qualquer campo de sua preferência)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.funcionario.updateOne(
+{ "nome" : "Aparício Dias" },
+{ $set: { "nome" : "Fabrício Dias" } }
+); 
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0 }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Busca de funcionário por nome
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.funcionario.find({nome: "Marina Frazão"})
+{ _id: ObjectId("63041ce76d5d4b4c86981ef6"),
+  nome: 'Marina Frazão',
+  telefone: '99 7589-1854',
+  cpf: '21788502000',
+  id: 5,
+  cargo_id: 1,
+  usuario_id: 8 }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Busca de funcionário por cargo
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.funcionario.find({cargo_id: 3})
+{ _id: ObjectId("63041d046d5d4b4c86981ef7"),
+  nome: 'Joana Freitas',
+  telefone: '99 7589-7534',
+  cpf: '85690938025',
+  id: 6,
+  cargo_id: 3,
+  usuario_id: 9 }
+{ _id: ObjectId("63041d116d5d4b4c86981ef8"),
+  nome: 'Aparício Dias',
+  telefone: '99 7514-7884',
+  cpf: '14131448025',
+  id: 7,
+  cargo_id: 3,
+  usuario_id: 10 }
+
