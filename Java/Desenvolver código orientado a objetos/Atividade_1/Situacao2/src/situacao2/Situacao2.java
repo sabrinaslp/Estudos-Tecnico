@@ -8,34 +8,34 @@ public class Situacao2 {
         int idade, primeiraIdade = 0, segundaIdade = 0, i = 1;
         String primeiroHosp, segundoHosp, quartoA, quartoB;
 
-        Scanner input = new Scanner(System.in);
+        Scanner leia = new Scanner(System.in);
 
         while (segundaIdade == 0) {
 
             /* Solicitação dos dados do primeiro hóspede */
             System.out.println("Insira o nome do hóspede: ");
-            primeiroHosp = input.nextLine();
+            primeiroHosp = leia.nextLine();
             System.out.println("--------------------------------------------------------------------------------- ");
 
             System.out.println("Insira a idade do hóspede: ");
-            idade = input.nextInt();
+            idade = leia.nextInt();
             System.out.println("--------------------------------------------------------------------------------- ");
 
-            input.nextLine();
+            leia.nextLine();
 
             quartoA = primeiroHosp;
             primeiraIdade = idade;
 
             /* Solicitação dos dados do segundo hóspede */
             System.out.println("Insira o nome do hóspede: ");
-            segundoHosp = input.nextLine();
+            segundoHosp = leia.nextLine();
             System.out.println("--------------------------------------------------------------------------------- ");
 
             System.out.println("Insira a idade do hóspede: ");
-            idade = input.nextInt();
+            idade = leia.nextInt();
             System.out.println("--------------------------------------------------------------------------------- ");
 
-            input.nextLine();
+            leia.nextLine();
 
             quartoB = segundoHosp;
             segundaIdade = idade;
@@ -49,7 +49,7 @@ public class Situacao2 {
                 quartoA = segundoHosp;
             }
 
-            if (primeiraIdade >= 60 || segundaIdade >= 60) {
+            if (primeiraIdade >= 60 || segundaIdade >= 60) { /* Realização das trocas dos quartos caso o segundo hóspede for mais velho. */
                 System.out.println("Quarto A: " + quartoA + " com desconto de 40%.");
                 System.out.println("Quarto B: " + quartoB + ".");
                 System.out.println("--------------------------------------------------------------------------------- ");
